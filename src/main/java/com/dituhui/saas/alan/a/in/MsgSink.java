@@ -26,12 +26,13 @@ public class MsgSink {
 		
 		String msg[]=message.split(",");
 		try {
-			String ips=redisTemplate.opsForValue().get(msg[0]);
-			if(ips.equals("10.25.11.231")){
-				sendService.sendMessage1(msg[1]);
-			}else{
-				sendService.sendMessage2(msg[1]);
-			}
+			sendService.sendMessage1(msg[1]);
+//			String ips=redisTemplate.opsForValue().get(msg[0]);
+//			if(ips.equals("10.25.11.231")){
+//				sendService.sendMessage1(msg[1]);
+//			}else{
+//				sendService.sendMessage2(msg[1]);
+//			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
